@@ -32,14 +32,11 @@ let pageLogic = (() => {
 
   function toggleMenuPg() {
     let menuPg = document.querySelector('.menu-pg');
+    menuPg.style.pointerEvents = 'auto';
     menuPg.classList.toggle('open-menu');
-    if (menuPg.classList.contains('open-menu')) {
-      menuPg.style.display = 'block';
-    } else {
+    if (!menuPg.classList.contains('open-menu')) {
       menuPg.style.pointerEvents = 'none';
       let delayedMenuClose = setTimeout(() => {
-        menuPg.style.display = 'none';
-        menuPg.style.pointerEvents = 'auto';
         clearTimeout(delayedMenuClose);
       }, 250);
     }
