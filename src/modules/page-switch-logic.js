@@ -31,15 +31,17 @@ let pageLogic = (() => {
   }
 
   function toggleMenuPg() {
+    let body = document.querySelector('body');
+
     let menuPg = document.querySelector('.menu-pg');
+    menuPg.style.pointerEvents = 'auto';
     menuPg.classList.toggle('open-menu');
-    if (menuPg.classList.contains('open-menu')) {
-      menuPg.style.display = 'block';
-    } else {
+    body.style.overflow = 'hidden';
+
+    if (!menuPg.classList.contains('open-menu')) {
       menuPg.style.pointerEvents = 'none';
       let delayedMenuClose = setTimeout(() => {
-        menuPg.style.display = 'none';
-        menuPg.style.pointerEvents = 'auto';
+        body.style.overflow = 'auto';
         clearTimeout(delayedMenuClose);
       }, 250);
     }
@@ -55,6 +57,11 @@ let pageLogic = (() => {
         page.style.display = 'block';
       }
     });
+  }
+
+  function togglePointerEve(elem) {
+    console.log(elem);
+    elem.classList.toggle('curr-page-disabled');
   }
 
   function menuItemLogic() {
