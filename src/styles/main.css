@@ -17,21 +17,16 @@ body {
   src: url('../fonts/Roboto/Roboto-Regular.ttf');
 }
 
-.mobile-view {
-  display: inline-block;
-}
-
 .home-pg {
   display: block;
-  position: relative;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .home-bg {
-  position: absolute;
-  display: block;
-  box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -73,7 +68,7 @@ nav::before {
 }
 
 .home-text-container {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -122,9 +117,11 @@ footer {
 
 .menu-pg {
   opacity: 0;
-  position: relative;
+  position: fixed;
   transition: 0.2s ease-in-out;
   pointer-events: none;
+  height: 100vh;
+  width: 100vw;
 }
 
 .menu-pg.open-menu {
@@ -132,7 +129,9 @@ footer {
 }
 
 .menu-bg {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #4a4e69;
   height: 100vh;
   width: 100vw;
@@ -177,6 +176,11 @@ footer {
   text-decoration: none;
   font-family: 'Roboto-Medium';
   cursor: pointer;
+}
+
+.menu-social-footer {
+  position: absolute;
+  bottom: 0;
 }
 
 /* Icon 4 - By Jesse Couch Codepen: https://codepen.io/designcouch*/
