@@ -7,6 +7,11 @@ let compStorage = () => {
 };
 
 let pageLogic = (() => {
+  function toggleMenuPg() {
+    let menuPg = document.querySelector('.menu-pg');
+    menuPg.classList.toggle('open-menu');
+  }
+
   function toggleCurrPg() {}
 
   return {

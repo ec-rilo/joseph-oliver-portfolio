@@ -134,6 +134,10 @@ table {
 /*!***********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/main.css ***!
   \***********************************************************************/
+body {
+  background-color: #4a4e69;
+}
+
 @font-face {
   font-family: 'Roboto Medium';
   src: url(7429a63c09f79a1760b0.ttf);
@@ -225,6 +229,7 @@ nav::before {
 }
 
 footer {
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -246,26 +251,6 @@ footer {
   object-fit: contain;
 }
 
-@keyframes open-menu-pg {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes close-menu-pg {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 .menu-pg {
   opacity: 0;
   position: relative;
@@ -284,6 +269,7 @@ footer {
 }
 
 .menu-pg-nav {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;

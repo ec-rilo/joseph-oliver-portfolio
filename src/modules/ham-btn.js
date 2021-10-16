@@ -4,6 +4,7 @@ const hamBtnLogic = (() => {
   let hamBtn = document.querySelector('.nav-icon4');
   hamBtn.addEventListener('click', () => {
     hamBtn.classList.toggle('open');
+    pageLogic.toggleMenuPg();
   });
 })();
 
