@@ -89,6 +89,7 @@ nav::before {
 }
 
 footer {
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -128,6 +129,7 @@ footer {
 }
 
 .menu-pg-nav {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
