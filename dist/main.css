@@ -139,19 +139,26 @@ body {
 }
 
 @font-face {
-  font-family: 'Roboto Medium';
+  font-family: 'Roboto-Medium';
   src: url(7429a63c09f79a1760b0.ttf);
 }
 
 @font-face {
-  font-family: 'Roboto Bold';
+  font-family: 'Roboto-Bold';
   src: url(75371f53f06181df75f1.ttf);
 }
 
-.curr-pg {
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url(a8d6ac03c7b96b7acb62.ttf);
+}
+
+.mobile-view {
+  display: inline-block;
 }
 
 .home-pg {
+  display: block;
   position: relative;
 }
 
@@ -214,11 +221,11 @@ nav::before {
 
 .home-text-container > p {
   color: white;
-  font-family: 'Roboto Medium', Arial;
+  font-family: 'Roboto-Medium', Arial;
 }
 
 .home-text-container > p:nth-child(1) {
-  font-family: 'Roboto Bold';
+  font-family: 'Roboto-Bold';
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
@@ -229,12 +236,10 @@ nav::before {
 }
 
 footer {
-  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: fixed;
-  bottom: 20px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -270,7 +275,7 @@ footer {
 }
 
 .menu-pg-nav {
-  position: fixed;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -280,7 +285,7 @@ footer {
 }
 
 .menu-pg-nav > p {
-  font-family: 'Roboto Medium';
+  font-family: 'Roboto-Medium';
   color: white;
   font-size: 1.2rem;
 }
@@ -306,7 +311,7 @@ footer {
   font-size: 1.3rem;
   color: white;
   text-decoration: none;
-  font-family: 'Roboto Medium';
+  font-family: 'Roboto-Medium';
   cursor: pointer;
 }
 
@@ -395,5 +400,48 @@ footer {
 }
 
 .about-me-pg {
+  display: none;
+}
+
+.about-pg-text-container {
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: white;
+  font-family: 'Roboto-Regular';
+}
+
+.about-pg-text-container > h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-pg-text-container > p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.client-img-circle {
+  display: block;
+  border-radius: 50%;
+  height: 300px;
+  margin: 100px auto;
+}
+
+.contact-block {
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 60px auto;
+}
+
+.contact-block > p {
+  color: white;
 }
 
