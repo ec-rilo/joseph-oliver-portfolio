@@ -144,6 +144,9 @@ table {
   src: url(75371f53f06181df75f1.ttf);
 }
 
+.curr-pg {
+}
+
 .home-pg {
   position: relative;
 }
@@ -243,9 +246,34 @@ footer {
   object-fit: contain;
 }
 
+@keyframes open-menu-pg {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes close-menu-pg {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .menu-pg {
-  display: none;
+  opacity: 0;
   position: relative;
+  transition: 0.2s ease-in-out;
+}
+
+.menu-pg.open-menu {
+  opacity: 1;
 }
 
 .menu-bg {
