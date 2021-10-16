@@ -1,20 +1,10 @@
+import { pageLogic } from './page-switch-logic.js';
+
 const hamBtnLogic = (() => {
-  const hamBtnContainer = document.querySelector('.ham-btn-container');
-
-  function createHamLayers() {
-    const numOfHamLayers = 3;
-    for (let i = 0; i < numOfHamLayers; ++i) {
-      let layer = document.createElement('div');
-      layer.classList.add('ham-layer');
-      hamBtnContainer.appendChild(layer);
-    }
-  }
-
-  function initHamBtn() {
-    createHamLayers();
-  }
-
-  initHamBtn();
+  let hamBtn = document.querySelector('.nav-icon4');
+  hamBtn.addEventListener('click', () => {
+    hamBtn.classList.toggle('open');
+  });
 })();
 
 export { hamBtnLogic };

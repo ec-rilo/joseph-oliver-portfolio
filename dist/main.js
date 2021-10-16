@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.css */ \"./src/styles/reset.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _modules_ham_btn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/ham-btn.js */ \"./src/modules/ham-btn.js\");\n\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.css */ \"./src/styles/reset.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _modules_ham_btn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/ham-btn.js */ \"./src/modules/ham-btn.js\");\n/* harmony import */ var _modules_page_switch_logic_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\n\n\n\nlet homePage = '.home-pg';\nlet menuPage = '.menu-pg';\nlet aboutPage = '.about-pg';\n\nif (!localStorage.getItem('pageArr')) {\n  let pageArr = [];\n  pageArr.push(homePage);\n  pageArr.push(menuPage);\n  pageArr.push(aboutPage);\n  localStorage.setItem('pageArr', JSON.stringify(pageArr));\n}\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/index.js?");
 
 /***/ }),
 
@@ -46,7 +46,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\nconst hamBtnLogic = (() => {\n  const hamBtnContainer = document.querySelector('.ham-btn-container');\n\n  function createHamLayers() {\n    const numOfHamLayers = 3;\n    for (let i = 0; i < numOfHamLayers; ++i) {\n      let layer = document.createElement('div');\n      layer.classList.add('ham-layer');\n      hamBtnContainer.appendChild(layer);\n    }\n  }\n\n  function initHamBtn() {\n    createHamLayers();\n  }\n\n  initHamBtn();\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\n/* harmony import */ var _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\nconst hamBtnLogic = (() => {\n  let hamBtn = document.querySelector('.nav-icon4');\n  hamBtn.addEventListener('click', () => {\n    hamBtn.classList.toggle('open');\n    _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__.pageLogic.toggleMenuPg();\n  });\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
+
+/***/ }),
+
+/***/ "./src/modules/page-switch-logic.js":
+/*!******************************************!*\
+  !*** ./src/modules/page-switch-logic.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pageLogic\": () => (/* binding */ pageLogic),\n/* harmony export */   \"compStorage\": () => (/* binding */ compStorage)\n/* harmony export */ });\nlet compStorage = () => {\n  function setPage() {}\n\n  return {\n    setPage,\n  };\n};\n\nlet pageLogic = (() => {\n  function toggleMenuPg() {\n    let menuPg = document.querySelector('.menu-pg');\n    menuPg.classList.toggle('open-menu');\n  }\n\n  function toggleCurrPg() {}\n\n  return {\n    toggleMenuPg,\n  };\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/page-switch-logic.js?");
 
 /***/ })
 
