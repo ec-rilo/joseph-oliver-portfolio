@@ -319,6 +319,10 @@ footer {
   bottom: 0;
 }
 
+.curr-page-disabled {
+  pointer-events: none;
+}
+
 /* Icon 4 - By Jesse Couch Codepen: https://codepen.io/designcouch*/
 /* Forked Codepen: https://codepen.io/designcouch/pen/Atyop*/
 /* Modified by Edgar Carrillo */
