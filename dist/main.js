@@ -46,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\nconst hamBtnLogic = (() => {\n  const hamBtnContainer = document.querySelector('.ham-btn-container');\n\n  function createHamLayers() {\n    const numOfHamLayers = 3;\n    for (let i = 0; i < numOfHamLayers; ++i) {\n      let layer = document.createElement('div');\n      layer.classList.add('ham-layer');\n      hamBtnContainer.appendChild(layer);\n    }\n  }\n\n  function initHamBtn() {\n    createHamLayers();\n  }\n\n  initHamBtn();\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\nconst hamBtnLogic = (() => {\n  let hamBtn = document.querySelector('.nav-icon4');\n  console.log(hamBtn);\n  hamBtn.addEventListener('click', () => {\n    hamBtn.classList.toggle('open');\n    console.log('hello');\n  });\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
 
 /***/ })
 
