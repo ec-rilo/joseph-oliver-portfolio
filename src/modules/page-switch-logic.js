@@ -52,7 +52,13 @@ let pageLogic = (() => {
     pgName = pgName.replace(/\s/g, '-');
     let pageElemArr = createPageElemArr();
     pageElemArr.forEach((page) => {
-      if (page.classList.contains(pgName)) {
+      if (pgName === 'artstation-pg') {
+        console.log('welp');
+        window.open(
+          'https://www.artstation.com/josepholiver/profile',
+          '_blank'
+        );
+      } else if (page.classList.contains(pgName)) {
         hideAllPages();
         page.style.display = 'block';
       }
