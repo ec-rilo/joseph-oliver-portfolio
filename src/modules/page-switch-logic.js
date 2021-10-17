@@ -36,12 +36,12 @@ let pageLogic = (() => {
     let menuPg = document.querySelector('.menu-pg');
     menuPg.style.pointerEvents = 'auto';
     menuPg.classList.toggle('open-menu');
-    body.style.overflow = 'hidden';
+    body.style.overflowY = 'hidden';
 
     if (!menuPg.classList.contains('open-menu')) {
       menuPg.style.pointerEvents = 'none';
       let delayedMenuClose = setTimeout(() => {
-        body.style.overflow = 'auto';
+        body.style.overflowY = 'auto';
         clearTimeout(delayedMenuClose);
       }, 250);
     }
@@ -52,7 +52,13 @@ let pageLogic = (() => {
     pgName = pgName.replace(/\s/g, '-');
     let pageElemArr = createPageElemArr();
     pageElemArr.forEach((page) => {
-      if (page.classList.contains(pgName)) {
+      if (pgName === 'artstation-pg') {
+        console.log('welp');
+        window.open(
+          'https://www.artstation.com/josepholiver/profile',
+          '_blank'
+        );
+      } else if (page.classList.contains(pgName)) {
         hideAllPages();
         page.style.display = 'block';
       }
