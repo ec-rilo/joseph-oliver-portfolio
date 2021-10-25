@@ -598,3 +598,21 @@ input {
   line-height: 1.3;
 }
 
+.photog-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  border-top: 3px solid white;
+  color: white;
+  line-height: 1.2;
+  font-size: 1.2rem;
+  font-family: 'Roboto-Regular';
+}
+
+.photog-info-container > p:nth-child(4) {
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
