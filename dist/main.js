@@ -10,6 +10,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.css */ \"./src/styles/reset.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _modules_ham_btn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/ham-btn.js */ \"./src/modules/ham-btn.js\");\n/* harmony import */ var _modules_page_switch_logic_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\n\n\n\nif (!localStorage.getItem('pageArr')) {\n  var homePage = 'home-pg';\n  var aboutPage = 'about-me-pg';\n  var photogPage = 'photography-pg';\n  var contactPage = 'contact-pg';\n  var pageArr = [];\n  pageArr.push(homePage);\n  pageArr.push(aboutPage);\n  pageArr.push(photogPage);\n  pageArr.push(contactPage);\n  localStorage.setItem('pageArr', JSON.stringify(pageArr));\n}\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/ham-btn.js":
+/*!********************************!*\
+  !*** ./src/modules/ham-btn.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\n/* harmony import */ var _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\nvar hamBtnLogic = function () {\n  var hamBtn = document.querySelector('.nav-icon4');\n\n  function toggleHamBtn() {\n    hamBtn.classList.toggle('open');\n  }\n\n  hamBtn.addEventListener('click', function () {\n    hamBtn.classList.toggle('open');\n    _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__.pageLogic.toggleMenuPg();\n  });\n  return {\n    toggleHamBtn: toggleHamBtn\n  };\n}();\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
+
+/***/ }),
+
+/***/ "./src/modules/page-switch-logic.js":
+/*!******************************************!*\
+  !*** ./src/modules/page-switch-logic.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pageLogic\": () => (/* binding */ pageLogic),\n/* harmony export */   \"compStorage\": () => (/* binding */ compStorage)\n/* harmony export */ });\n/* harmony import */ var _ham_btn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ham-btn */ \"./src/modules/ham-btn.js\");\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _iterableToArray(iter) { if (typeof Symbol !== \"undefined\" && iter[Symbol.iterator] != null || iter[\"@@iterator\"] != null) return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n\nvar compStorage = function compStorage() {\n  function setPage() {}\n\n  return {\n    setPage: setPage\n  };\n};\n\nvar pageLogic = function () {\n  function createPageElemArr() {\n    var pageNamesArr = JSON.parse(localStorage.getItem('pageArr'));\n    var numOfPgNames = pageNamesArr.length;\n    var pageElemArr = [];\n\n    for (var i = 0; i < numOfPgNames; ++i) {\n      var page = document.querySelector(\".\".concat(pageNamesArr[i]));\n      pageElemArr.push(page);\n    }\n\n    return pageElemArr;\n  }\n\n  function createMenuItemArr() {}\n\n  function hideAllPages() {\n    var pageElemArr = createPageElemArr();\n    pageElemArr.forEach(function (page) {\n      page.style.display = 'none';\n    });\n  }\n\n  function toggleMenuPg() {\n    var body = document.querySelector('body');\n    var menuPg = document.querySelector('.menu-pg');\n    menuPg.style.pointerEvents = 'auto';\n    menuPg.classList.toggle('open-menu');\n    body.style.overflowY = 'hidden';\n\n    if (!menuPg.classList.contains('open-menu')) {\n      menuPg.style.pointerEvents = 'none';\n      var delayedMenuClose = setTimeout(function () {\n        body.style.overflowY = 'auto';\n        clearTimeout(delayedMenuClose);\n      }, 250);\n    }\n  }\n\n  function switchPg(clickedPgName) {\n    var pgName = clickedPgName.innerHTML.toLowerCase() + '-pg';\n    pgName = pgName.replace(/\\s/g, '-');\n    var pageElemArr = createPageElemArr();\n    pageElemArr.forEach(function (page) {\n      if (pgName === 'artstation-pg') {\n        console.log('welp');\n        window.open('https://www.artstation.com/josepholiver/profile', '_blank');\n      } else if (page.classList.contains(pgName)) {\n        hideAllPages();\n        page.style.display = 'block';\n      }\n    });\n  }\n\n  function togglePointerEve(elem) {\n    console.log(elem);\n    elem.classList.toggle('curr-page-disabled');\n  }\n\n  function menuItemLogic() {\n    var menuArr = _toConsumableArray(document.querySelector('.menu-pg-item-container').children);\n\n    menuArr.forEach(function (item) {\n      item.addEventListener('click', function () {\n        switchPg(item);\n        toggleMenuPg();\n        _ham_btn__WEBPACK_IMPORTED_MODULE_0__.hamBtnLogic.toggleHamBtn();\n      });\n    });\n  }\n\n  menuItemLogic();\n  return {\n    toggleMenuPg: toggleMenuPg\n  };\n}();\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/page-switch-logic.js?");
+
+/***/ }),
+
 /***/ "./src/styles/main.css":
 /*!*****************************!*\
   !*** ./src/styles/main.css ***!
@@ -27,36 +57,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/styles/reset.css?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_reset_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/reset.css */ \"./src/styles/reset.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _modules_ham_btn_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/ham-btn.js */ \"./src/modules/ham-btn.js\");\n/* harmony import */ var _modules_page_switch_logic_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\n\n\n\nif (!localStorage.getItem('pageArr')) {\n  let homePage = 'home-pg';\n  let aboutPage = 'about-me-pg';\n  let photogPage = 'photography-pg';\n\n  let pageArr = [];\n  pageArr.push(homePage);\n  pageArr.push(aboutPage);\n  pageArr.push(photogPage);\n  localStorage.setItem('pageArr', JSON.stringify(pageArr));\n}\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/modules/ham-btn.js":
-/*!********************************!*\
-  !*** ./src/modules/ham-btn.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"hamBtnLogic\": () => (/* binding */ hamBtnLogic)\n/* harmony export */ });\n/* harmony import */ var _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./page-switch-logic.js */ \"./src/modules/page-switch-logic.js\");\n\n\nconst hamBtnLogic = (() => {\n  let hamBtn = document.querySelector('.nav-icon4');\n\n  function toggleHamBtn() {\n    hamBtn.classList.toggle('open');\n  }\n\n  hamBtn.addEventListener('click', () => {\n    hamBtn.classList.toggle('open');\n    _page_switch_logic_js__WEBPACK_IMPORTED_MODULE_0__.pageLogic.toggleMenuPg();\n  });\n\n  return {\n    toggleHamBtn,\n  };\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/ham-btn.js?");
-
-/***/ }),
-
-/***/ "./src/modules/page-switch-logic.js":
-/*!******************************************!*\
-  !*** ./src/modules/page-switch-logic.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"pageLogic\": () => (/* binding */ pageLogic),\n/* harmony export */   \"compStorage\": () => (/* binding */ compStorage)\n/* harmony export */ });\n/* harmony import */ var _ham_btn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ham-btn */ \"./src/modules/ham-btn.js\");\n\n\nlet compStorage = () => {\n  function setPage() {}\n\n  return {\n    setPage,\n  };\n};\n\nlet pageLogic = (() => {\n  function createPageElemArr() {\n    let pageNamesArr = JSON.parse(localStorage.getItem('pageArr'));\n    let numOfPgNames = pageNamesArr.length;\n    let pageElemArr = [];\n    for (let i = 0; i < numOfPgNames; ++i) {\n      let page = document.querySelector(`.${pageNamesArr[i]}`);\n      pageElemArr.push(page);\n    }\n\n    return pageElemArr;\n  }\n\n  function createMenuItemArr() {}\n\n  function hideAllPages() {\n    let pageElemArr = createPageElemArr();\n    pageElemArr.forEach((page) => {\n      page.style.display = 'none';\n    });\n  }\n\n  function toggleMenuPg() {\n    let body = document.querySelector('body');\n\n    let menuPg = document.querySelector('.menu-pg');\n    menuPg.style.pointerEvents = 'auto';\n    menuPg.classList.toggle('open-menu');\n    body.style.overflowY = 'hidden';\n\n    if (!menuPg.classList.contains('open-menu')) {\n      menuPg.style.pointerEvents = 'none';\n      let delayedMenuClose = setTimeout(() => {\n        body.style.overflowY = 'auto';\n        clearTimeout(delayedMenuClose);\n      }, 250);\n    }\n  }\n\n  function switchPg(clickedPgName) {\n    let pgName = clickedPgName.innerHTML.toLowerCase() + '-pg';\n    pgName = pgName.replace(/\\s/g, '-');\n    let pageElemArr = createPageElemArr();\n    pageElemArr.forEach((page) => {\n      if (pgName === 'artstation-pg') {\n        console.log('welp');\n        window.open(\n          'https://www.artstation.com/josepholiver/profile',\n          '_blank'\n        );\n      } else if (page.classList.contains(pgName)) {\n        hideAllPages();\n        page.style.display = 'block';\n      }\n    });\n  }\n\n  function togglePointerEve(elem) {\n    console.log(elem);\n    elem.classList.toggle('curr-page-disabled');\n  }\n\n  function menuItemLogic() {\n    let menuArr = [\n      ...document.querySelector('.menu-pg-item-container').children,\n    ];\n\n    menuArr.forEach((item) => {\n      item.addEventListener('click', () => {\n        switchPg(item);\n        toggleMenuPg();\n        _ham_btn__WEBPACK_IMPORTED_MODULE_0__.hamBtnLogic.toggleHamBtn();\n      });\n    });\n  }\n\n  menuItemLogic();\n\n  return {\n    toggleMenuPg,\n  };\n})();\n\n\n\n\n//# sourceURL=webpack://joseph-oliver-portfolio/./src/modules/page-switch-logic.js?");
 
 /***/ })
 
