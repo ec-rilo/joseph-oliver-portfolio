@@ -496,6 +496,7 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
 }
 
