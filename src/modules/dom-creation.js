@@ -1,8 +1,13 @@
 function createBackDrop() {
-  let backDrop = document.createElement('div');
+  const backDrop = document.createElement('div');
   backDrop.classList.add('back-drop');
+
+  const body = document.querySelector('body');
+  body.style.position = 'fixed';
+
   backDrop.addEventListener('click', () => {
     backDrop.remove();
+    body.style.position = 'static';
   });
   return backDrop;
 }
