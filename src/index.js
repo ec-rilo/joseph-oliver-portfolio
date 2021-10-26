@@ -2,6 +2,7 @@ import './styles/reset.css';
 import './styles/main.css';
 import './modules/ham-btn.js';
 import './modules/page-switch-logic.js';
+import './modules/contact-pg-validation';
 
 if (!localStorage.getItem('pageArr')) {
   let homePage = 'home-pg';
