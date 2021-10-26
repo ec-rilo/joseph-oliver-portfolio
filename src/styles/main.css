@@ -518,3 +518,8 @@ input {
 .show {
   opacity: 1;
 }
+
+.error-message.success-message {
+  opacity: 1;
+  background-color: #23c552;
+}
