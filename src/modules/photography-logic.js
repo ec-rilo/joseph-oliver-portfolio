@@ -12,9 +12,9 @@ let photographyLogic = (() => {
     }
 
     #focus() {
-      let photogContainer = document.querySelector('.photog-img-container');
-      let backDrop = createBackDrop();
-      let focusImg = createFocusImg(this.imgSrc);
+      const photogContainer = document.querySelector('.photog-img-container');
+      const backDrop = createBackDrop();
+      const focusImg = createFocusImg(this.imgSrc);
       backDrop.appendChild(focusImg);
       photogContainer.appendChild(backDrop);
     }
