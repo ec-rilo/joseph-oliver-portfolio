@@ -424,6 +424,7 @@ input {
   background-color: transparent;
   border: none;
   outline: none;
+  overflow: hidden;
 }
 
 .submit-btn {
@@ -434,7 +435,7 @@ input {
   background-color: #4a4e69;
   font-size: 1.2rem;
   border: none;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-bottom: 80px;
 }
 
@@ -482,4 +483,38 @@ input {
 .photog-info-container > p:nth-child(4) {
   margin-top: 20px;
   text-decoration: underline;
+}
+
+.error-text-container {
+  display: none;
+  margin-top: 10px;
+  font-family: 'Roboto-Regular';
+  color: #ff4545;
+}
+
+.error-text-container + p {
+  color: #4a4e69;
+  font-size: 1.2rem;
+  font-family: 'Roboto-Regular';
+  margin-top: 5px;
+}
+
+.error-message {
+  opacity: 0;
+  max-width: 600px;
+  height: 40px;
+  background-color: #ff4545;
+  margin-right: 30px;
+  padding: 5px 15px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-family: 'Roboto-Bold';
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: opacity 0.5s;
+}
+
+.show {
+  opacity: 1;
 }
