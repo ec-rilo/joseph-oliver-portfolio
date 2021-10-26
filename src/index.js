@@ -3,6 +3,8 @@ import './styles/main.css';
 import './modules/ham-btn.js';
 import './modules/page-switch-logic.js';
 import './modules/contact-pg-validation';
+import './modules/photography-logic';
+import photographyLogic from './modules/photography-logic';
 
 if (!localStorage.getItem('pageArr')) {
   let homePage = 'home-pg';
@@ -17,3 +19,5 @@ if (!localStorage.getItem('pageArr')) {
   pageArr.push(contactPage);
   localStorage.setItem('pageArr', JSON.stringify(pageArr));
 }
+
+photographyLogic.addImgsToHTML();
