@@ -195,12 +195,29 @@
       <div class="contact-pg">
         <div class="contact-card">
           <p class="title-text">Contact</p>
-          <form action="#" method="#" novalidate>
+          <form
+            name="Joseph Oliver Photography"
+            method="#"
+            action="#"
+            data-netlify="#"
+            novalidate
+          >
             <ul>
               <li>
                 <label for="name">Full Name:</label>
                 <div class="input-container">
-                  <input id="name" type="text" name="client_name" required />
+                  <input
+                    id="name"
+                    type="text"
+                    name="client_name"
+                    pattern="^\S+\s\S+$"
+                    maxlength="30"
+                    minlength="5"
+                    required
+                  />
+                </div>
+                <div class="error-text-container">
+                  <p>Please enter your first and last name only.</p>
                 </div>
               </li>
               <li>
@@ -208,16 +225,23 @@
                 <div class="input-container">
                   <input id="email" type="email" name="client_email" required />
                 </div>
+                <div class="error-text-container">
+                  <p>Email must include the @ symbol.</p>
+                </div>
               </li>
               <li>
                 <label for="phone">Phone Number:</label>
                 <div class="input-container">
                   <input
                     id="phone"
-                    type="text"
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     name="client_phone_num"
                     required
                   />
+                </div>
+                <div class="error-text-container">
+                  <p>Format: 123-456-7890</p>
                 </div>
               </li>
               <li>
@@ -225,11 +249,21 @@
                 <div class="message-container">
                   <textarea
                     class="contact-message-block"
+                    maxlength="200"
+                    minlength="20"
+                    wrap="hard"
                     id="message"
                     name="client_message"
                     required
                   ></textarea>
                 </div>
+                <div class="error-text-container">
+                  <p>Message must be 20-200 characters.</p>
+                </div>
+                <p>Characters: <span id="show-words-count">0</span></p>
+              </li>
+              <li>
+                <p class="error-message">Please complete required fields.</p>
               </li>
               <li>
                 <button type="submit" class="submit-btn">Submit</button>
