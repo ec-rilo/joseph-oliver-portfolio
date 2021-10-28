@@ -14,6 +14,7 @@ const hamBtnLogic = (() => {
 
   return {
     toggleHamBtn,
+    hamBtn,
   };
 })();
 
