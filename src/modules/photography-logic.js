@@ -40,8 +40,11 @@ let photographyLogic = (() => {
     const photogContainer = document.querySelector('.photog-img-container');
 
     images.forEach((image) => {
+      let li = document.createElement('li');
+      li.classList.add('img-li');
       let img = new Img(image);
-      photogContainer.appendChild(img.imgElem);
+      li.appendChild(img.imgElem);
+      photogContainer.appendChild(li);
     });
   }
 
