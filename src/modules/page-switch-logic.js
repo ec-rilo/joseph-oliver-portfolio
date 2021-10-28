@@ -41,7 +41,7 @@ let pageLogic = (() => {
     if (!menuPg.classList.contains('open-menu')) {
       menuPg.style.pointerEvents = 'none';
       let delayedMenuClose = setTimeout(() => {
-        body.style.overflowY = 'auto';
+        body.removeAttribute('style');
         clearTimeout(delayedMenuClose);
       }, 250);
     }
