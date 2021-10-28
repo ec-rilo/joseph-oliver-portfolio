@@ -480,8 +480,16 @@ footer {
 .photog-img {
   display: block;
   box-sizing: border-box;
-  width: 100%;
+  object-fit: cover;
+  max-width: 500px;
+  height: 300px;
   cursor: pointer;
+}
+
+.remove-scroll {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
 }
 
 .back-drop {
