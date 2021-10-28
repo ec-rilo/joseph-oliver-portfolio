@@ -1,14 +1,24 @@
+import { hamBtnLogic } from './ham-btn';
+
 function createBackDrop() {
+  function removeBD() {
+    backDrop.remove();
+    photogPg.classList.remove('remove-scroll');
+  }
+
   const backDrop = document.createElement('div');
   backDrop.classList.add('back-drop');
 
-  const photogPg = document.querySelector('.photography-pg');
-  photogPg.style.position = 'fixed';
+  const photogPg = document.querySelector('body');
+  photogPg.classList.add('remove-scroll');
 
-  backDrop.addEventListener('click', () => {
-    backDrop.remove();
-    photogPg.style.position = 'static';
+  backDrop.addEventListener('click', () => removeBD());
+
+  hamBtnLogic.hamBtn.addEventListener('click', () => {
+    removeBD();
+    hamBtnLogic.hamBtn.removeEventListener('click', () => removeBD());
   });
+
   return backDrop;
 }
 
