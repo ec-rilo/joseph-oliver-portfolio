@@ -430,13 +430,13 @@ nav > p {
 
   .home-text-container > p:nth-child(1) {
     font-family: 'Roboto-Bold';
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin-bottom: 10px;
   }
 
   .home-text-container > p:nth-child(2),
   .home-text-container > p:nth-child(3) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .hp-menu {
