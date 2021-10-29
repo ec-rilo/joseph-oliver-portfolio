@@ -58,9 +58,9 @@ let pageLogic = (() => {
           '_blank'
         );
       } else if (page.classList.contains(pgName)) {
-        navBarLogic.changeNavBG();
         hideAllPages();
         page.style.display = 'block';
+        navBarLogic.changeNavBG();
       }
     });
   }
