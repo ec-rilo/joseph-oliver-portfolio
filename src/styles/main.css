@@ -340,6 +340,11 @@ nav > p {
   align-items: center;
   cursor: pointer;
   margin: 60px auto;
+  transition: background-color 0.5s;
+}
+
+.contact-block:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .contact-block > p {
