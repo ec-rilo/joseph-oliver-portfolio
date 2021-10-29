@@ -11,12 +11,12 @@ let navBarLogic = (() => {
 
     if (homePgVal !== 'block') {
       navBar.style.backgroundColor = '#4a4e69';
-      console.log('none');
     } else {
       navBar.removeAttribute('style');
-      console.log('block');
     }
   }
+
+  return { changeNavBG };
 })();
 
 export default navBarLogic;
