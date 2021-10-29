@@ -341,6 +341,10 @@ nav {
   z-index: 100;
 }
 
+.nav-icon4 {
+  display: none;
+}
+
 nav > p {
   margin-left: 30px;
 }
