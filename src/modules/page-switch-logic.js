@@ -1,4 +1,5 @@
 import { hamBtnLogic } from './ham-btn';
+import navBarLogic from './nav-bar';
 
 let compStorage = () => {
   function setPage() {}
@@ -20,8 +21,6 @@ let pageLogic = (() => {
 
     return pageElemArr;
   }
-
-  function createMenuItemArr() {}
 
   function hideAllPages() {
     let pageElemArr = createPageElemArr();
@@ -54,12 +53,12 @@ let pageLogic = (() => {
     let pageElemArr = createPageElemArr();
     pageElemArr.forEach((page) => {
       if (pgName === 'artstation-pg') {
-        console.log('welp');
         window.open(
           'https://www.artstation.com/josepholiver/profile',
           '_blank'
         );
       } else if (page.classList.contains(pgName)) {
+        navBarLogic.changeNavBG();
         hideAllPages();
         page.style.display = 'block';
       }
