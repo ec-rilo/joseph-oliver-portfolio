@@ -29,14 +29,4 @@ function createFocusImg(imgSrc) {
   return img;
 }
 
-function createHamBtn() {
-  let hamBtn = document.createElement('div');
-  hamBtn.classList.add('nav-icon4');
-  for (let i = 0; i < 3; ++i) {
-    let layer = document.createElement('span');
-    hamBtn.appendChild(layer);
-  }
-  return hamBtn;
-}
-
-export { createBackDrop, createFocusImg, createHamBtn };
+export { createBackDrop, createFocusImg };
