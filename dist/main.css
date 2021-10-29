@@ -583,7 +583,34 @@ nav > p {
     cursor: pointer;
   }
 
+  .imp-btn-container {
+    position: absolute;
+    top: 160px;
+    display: flex;
+    font-family: 'Roboto-Regular';
+    gap: 50px;
+  }
+
+  .imp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 60px;
+  }
+
+  .imp-btn-1 {
+    background-color: white;
+  }
+
+  .imp-btn-2 {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
   /* Photography Page */
+
   .photog-pg-title {
     color: white;
     font-size: 3rem;
@@ -640,6 +667,32 @@ nav > p {
     flex-direction: row;
     gap: 40px;
     cursor: pointer;
+  }
+
+  .imp-btn-container {
+    position: absolute;
+    top: 120px;
+    display: flex;
+    font-family: 'Roboto-Regular';
+    gap: 50px;
+  }
+
+  .imp-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 60px;
+  }
+
+  .imp-btn-1 {
+    background-color: white;
+  }
+
+  .imp-btn-2 {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   /* Photography page */
