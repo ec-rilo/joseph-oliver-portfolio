@@ -88,6 +88,7 @@ let pageLogic = (() => {
 
   return {
     toggleMenuPg,
+    switchPg,
   };
 })();
 
