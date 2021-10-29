@@ -15,6 +15,8 @@ let navBarLogic = (() => {
       navBar.removeAttribute('style');
     }
   }
+
+  return { changeNavBG };
 })();
 
 export default navBarLogic;
