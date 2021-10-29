@@ -4,6 +4,7 @@ import './modules/ham-btn.js';
 import './modules/page-switch-logic.js';
 import './modules/contact-pg-validation';
 import './modules/photography-logic';
+import './modules/nav-bar';
 import photographyLogic from './modules/photography-logic';
 
 if (!localStorage.getItem('pageArr')) {
