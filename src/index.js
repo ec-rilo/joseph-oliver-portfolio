@@ -6,6 +6,7 @@ import './modules/contact-pg-validation';
 import './modules/photography-logic';
 import './modules/nav-bar';
 import photographyLogic from './modules/photography-logic';
+import './modules/home-pg';
 
 if (!localStorage.getItem('pageArr')) {
   let homePage = 'home-pg';
