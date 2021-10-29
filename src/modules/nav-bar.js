@@ -1,5 +1,14 @@
+import { pageLogic } from './page-switch-logic';
+
 let navBarLogic = (() => {
   const navBar = document.querySelector('nav');
+  const navMenu = document.querySelector('.hp-menu');
+  const children = [...navMenu.children];
+  children.forEach((child) => {
+    child.firstChild.addEventListener('click', () => {
+      pageLogic.switchPg(child.firstChild);
+    });
+  });
 
   document.addEventListener('scroll', () => changeNavBG());
 
