@@ -37,6 +37,7 @@ let pageLogic = (() => {
     menuPg.style.pointerEvents = 'auto';
     menuPg.classList.toggle('open-menu');
     body.style.overflowY = 'hidden';
+    body.classList.toggle('remove-scroll');
 
     if (!menuPg.classList.contains('open-menu')) {
       menuPg.style.pointerEvents = 'none';
