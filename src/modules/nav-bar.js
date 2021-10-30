@@ -5,9 +5,12 @@ let navBarLogic = (() => {
   const navMenu = document.querySelector('.hp-menu');
   const children = [...navMenu.children];
   children.forEach((child) => {
-    child.firstChild.addEventListener('click', () => {
-      pageLogic.switchPg(child.firstChild);
-    });
+    if (child.firstChild.innerHTML !== 'ArtStation') {
+      child.firstChild.addEventListener('click', () => {
+        pageLogic.switchPg(child.firstChild);
+        console.log(child.firstChild);
+      });
+    }
   });
 
   document.addEventListener('scroll', () => changeNavBG());
