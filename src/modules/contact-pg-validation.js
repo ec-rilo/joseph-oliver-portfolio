@@ -35,15 +35,18 @@ let formLogic = (() => {
     const itemError = item.parentElement.nextElementSibling;
     const errorMsg = document.querySelector('.error-message');
 
+    let errorCount = 0;
     if (item.validity.typeMismatch || !item.validity.valid) {
       itemError.style.display = 'block';
       errorMsg.classList.add('show');
+      errorCount += 1;
     } else {
       itemError.style.display = 'none';
     }
 
+    console.log(errorCount);
     item.addEventListener('input', () => {
-      let errorCount = 0;
+      errorCount = 0;
 
       if (item.validity.typeMismatch || !item.validity.valid) {
         itemError.style.display = 'block';
@@ -65,6 +68,15 @@ let formLogic = (() => {
         errorMsg.classList.remove('success-message');
       }
     });
+
+    if (errorMsg.innerHTML === 'You are ready to submit!' || errorCount === 0) {
+      errorMsg.innerHTML = 'Thank you for your submission!';
+      errorMsg.classList.add('submit-message');
+      errorMsg.classList.add('show');
+      setTimeout(() => {
+        form.submit();
+      }, 3000);
+    }
   }
 
   // Check each input individually. If it has an error, increment error check.
