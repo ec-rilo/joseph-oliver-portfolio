@@ -29,6 +29,21 @@ let formLogic = (() => {
     itemsArr.forEach((item) => {
       errorCheck(item);
     });
+
+    const errorMsg = document.querySelector('.error-message');
+    let errorCount = 0;
+    itemsArr.forEach((item) => {
+      if (item.validity.typeMismatch || !item.validity.valid) {
+        errorCount += 1;
+      }
+    });
+
+    if (errorCount === 0) {
+      errorMsg.innerHTML = 'Thank you for your submission!';
+      errorMsg.classList.add('submit-message');
+      errorMsg.classList.add('show');
+      setTimeout(() => form.submit(), 3000);
+    }
   }
 
   function errorCheck(item) {
@@ -39,12 +54,10 @@ let formLogic = (() => {
     if (item.validity.typeMismatch || !item.validity.valid) {
       itemError.style.display = 'block';
       errorMsg.classList.add('show');
-      errorCount += 1;
     } else {
       itemError.style.display = 'none';
     }
 
-    console.log(errorCount);
     item.addEventListener('input', () => {
       errorCount = 0;
 
@@ -68,15 +81,6 @@ let formLogic = (() => {
         errorMsg.classList.remove('success-message');
       }
     });
-
-    if (errorMsg.innerHTML === 'You are ready to submit!' || errorCount === 0) {
-      errorMsg.innerHTML = 'Thank you for your submission!';
-      errorMsg.classList.add('submit-message');
-      errorMsg.classList.add('show');
-      setTimeout(() => {
-        form.submit();
-      }, 3000);
-    }
   }
 
   // Check each input individually. If it has an error, increment error check.
