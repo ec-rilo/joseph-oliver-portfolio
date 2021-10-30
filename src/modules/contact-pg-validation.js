@@ -42,7 +42,7 @@ let formLogic = (() => {
       errorMsg.innerHTML = 'Thank you for your submission!';
       errorMsg.classList.add('submit-message');
       errorMsg.classList.add('show');
-      setTimeout(() => form.submit(), 3000);
+      setTimeout(() => form.submit(), 2000);
     }
   }
 
